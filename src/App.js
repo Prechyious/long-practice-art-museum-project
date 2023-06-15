@@ -15,7 +15,7 @@ function App() {
                         navigation bar.
                     </p>
                 </Route>
-                <Route path="/galleries/:galleryId">
+                <Route exact path="/galleries/:galleryId">
                     <GalleryView galleries={harvardArt.records} />
                 </Route>
                 <Route>
