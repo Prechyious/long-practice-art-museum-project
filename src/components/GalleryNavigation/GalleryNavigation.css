@@ -1,3 +1,45 @@
+.title {
+    padding: 0 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+
 .active {
     font-weight: bold;
+}
+
+.home {
+    padding: 5px 15px;
+    border-bottom: 1px solid grey;
+}
+
+.home a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid grey;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin: 5px;
+    transition: all 500ms ease;
+}
+
+.nav-links a:hover {
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }

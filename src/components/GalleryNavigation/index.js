@@ -1,26 +1,30 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 import "./GalleryNavigation.css";
 
 const GalleryNavigation = ({ galleries }) => {
-    // console.log(galleries);
+    console.log(galleries);
     return (
         <nav>
-            <h1>Galleries</h1>
-            <NavLink exact to="/" activeClassName="active">
-                Home
-            </NavLink>
-            {galleries.map((gallery) => {
-                return (
-                    <NavLink
-                        exact
-                        key={gallery.id}
-                        to={`/galleries/${gallery.id}`}
-                        activeClassName="active"
-                    >
-                        {`${gallery.name}`}
-                    </NavLink>
-                );
-            })}
+            <h1 className="title">Galleries</h1>
+            <div className="home">
+                <NavLink exact to="/">
+                    Home
+                </NavLink>
+            </div>
+            <div className="nav-links">
+                {galleries.map((gallery) => {
+                    console.log(gallery);
+                    return (
+                        <NavLink
+                            key={gallery.id}
+                            to={`/galleries/${gallery.galleryid}`}
+                            activeClassName="active"
+                        >
+                            {gallery.name}
+                        </NavLink>
+                    );
+                })}
+            </div>
         </nav>
     );
 };

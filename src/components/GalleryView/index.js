@@ -1,5 +1,6 @@
-import { useParams, Switch, Route, useRouteMatch } from "react-router-dom";
+import { useParams, Route, useRouteMatch, Switch } from "react-router-dom";
 import ArtImageTile from "../ArtImageTile";
+import { ArtDescription } from "../ArtDescription";
 
 const GalleryView = ({ galleries }) => {
     const { galleryId } = useParams();
@@ -11,11 +12,10 @@ const GalleryView = ({ galleries }) => {
     const { url } = useRouteMatch();
 
     return (
-        <div>
-            {/* <h1>Hello from GalleryView</h1> */}
-            <h2> {`${foundGallery.name}`} </h2>
+        <main className="main">
+            <h2 className="gallery-title"> {foundGallery.name} </h2>
             <Switch>
-                <Route exact path={`${url}`}>
+                <Route exact path={url}>
                     <div className="image-wrapper">
                         {foundGallery.objects.map((artwork) => {
                             return (
@@ -28,8 +28,11 @@ const GalleryView = ({ galleries }) => {
                         })}
                     </div>
                 </Route>
+                <Route path={`${url}/art/:artId`}>
+                    <ArtDescription gallery={foundGallery} />
+                </Route>
             </Switch>
-        </div>
+        </main>
     );
 };
 
